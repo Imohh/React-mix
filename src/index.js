@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDom from 'react-dom'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+function App() {
+  const date = new Date(2019, 6, 12, 16)
+  const hours = date.getHours()
+  let timeOfDay
+
+  const styles = {
+
+  }
+
+  if (hours < 12) {
+    timeOfDay = "morning"
+    styles.color = "green"
+  } else if (hours >= 12 && hours < 17) {
+    timeOfDay = "afternoon"
+    styles.color = "brown"
+  } else {
+    timeOfDay ="night"
+    styles.color = "yellow"
+  }
+
+
+
+  return (
+    <h1 style={styles}>Good {timeOfDay}!</h1>
+  )
+}
+
+ReactDom.render (
+  <App />,
   document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+)
