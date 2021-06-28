@@ -6,3 +6,11 @@ body {
     background: red;
     padding: 20px
 }
+
+.this-todo {
+    background: red
+}
+
+.todo-item {
+    background: green
+  }
